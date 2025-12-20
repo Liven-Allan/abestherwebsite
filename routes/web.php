@@ -2,6 +2,39 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Static asset routes for production
+Route::get('/css/{file}', function ($file) {
+    $path = public_path("css/{$file}");
+    if (file_exists($path)) {
+        return response()->file($path);
+    }
+    abort(404);
+})->where('file', '.*');
+
+Route::get('/js/{file}', function ($file) {
+    $path = public_path("js/{$file}");
+    if (file_exists($path)) {
+        return response()->file($path);
+    }
+    abort(404);
+})->where('file', '.*');
+
+Route::get('/lib/{path}', function ($path) {
+    $filePath = public_path("lib/{$path}");
+    if (file_exists($filePath)) {
+        return response()->file($filePath);
+    }
+    abort(404);
+})->where('path', '.*');
+
+Route::get('/img/{path}', function ($path) {
+    $filePath = public_path("img/{$path}");
+    if (file_exists($filePath)) {
+        return response()->file($filePath);
+    }
+    abort(404);
+})->where('path', '.*');
+
 // Home page
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
