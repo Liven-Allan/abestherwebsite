@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
         // Force HTTPS URLs in production
         if (config('app.env') === 'production') {
             \Illuminate\Support\Facades\URL::forceScheme('https');
+            
+            // Force secure cookies and sessions for HTTPS
+            config(['session.secure' => true]);
+            config(['session.same_site' => 'none']);
         }
 
         // Share contact information, site settings and page header image with all views
