@@ -15,7 +15,7 @@ class StaffSeeder extends Seeder
     {
         // First staff member
         Staff::create([
-            'profile_picture' => 'img/team-1.jpg',
+            'profile_picture' => 'img/1766218778_mathteacher.png',
             'first_name' => 'Sarah',
             'last_name' => 'Johnson',
             'role' => 'Mathematics Teacher',
@@ -25,7 +25,7 @@ class StaffSeeder extends Seeder
 
         // Second staff member
         Staff::create([
-            'profile_picture' => 'img/team-2.jpg',
+            'profile_picture' => 'img/1766218877_maleteacher.png',
             'first_name' => 'Michael',
             'last_name' => 'Brown',
             'role' => 'Science Teacher',
@@ -35,7 +35,7 @@ class StaffSeeder extends Seeder
 
         // Third staff member
         Staff::create([
-            'profile_picture' => 'img/team-3.jpg',
+            'profile_picture' => 'img/1766218960_matht',
             'first_name' => 'Emily',
             'last_name' => 'Davis',
             'role' => 'English Teacher',
