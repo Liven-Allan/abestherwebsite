@@ -21,16 +21,33 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
+        // Debug: Log the login attempt
+        \Log::info('Login attempt', [
+            'username' => $request->username,
+            'ip' => $request->ip(),
+            'user_agent' => $request->userAgent()
+        ]);
+
         $user = User::where('username', $request->username)->first();
 
-        if ($user && Hash::check($request->password, $user->password)) {
-            Auth::login($user);
-            return redirect()->route('admin')->with('success', 'Login successful!');
+        if (!$user) {
+            \Log::warning('User not found', ['username' => $request->username]);
+            return back()->withErrors([
+                'username' => 'User not found.',
+            ])->withInput();
         }
 
-        return back()->withErrors([
-            'username' => 'Invalid credentials provided.',
-        ])->withInput();
+        if (!Hash::check($request->password, $user->password)) {
+            \Log::warning('Password mismatch', ['username' => $request->username]);
+            return back()->withErrors([
+                'username' => 'Invalid password.',
+            ])->withInput();
+        }
+
+        Auth::login($user);
+        \Log::info('Login successful', ['user_id' => $user->id, 'username' => $user->username]);
+        
+        return redirect()->route('admin')->with('success', 'Login successful!');
     }
 
     public function admin()

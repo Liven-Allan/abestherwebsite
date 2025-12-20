@@ -25,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
             
             // Force secure cookies and sessions for HTTPS
             config(['session.secure' => true]);
-            config(['session.same_site' => 'none']);
+            config(['session.same_site' => 'lax']);
+            config(['session.http_only' => true]);
         }
 
         // Share contact information, site settings and page header image with all views
