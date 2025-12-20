@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Force HTTPS URLs in production
+        if (config('app.env') === 'production') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         // Share contact information, site settings and page header image with all views
         \Illuminate\Support\Facades\View::composer('*', function ($view) {
             $footerContactInfo = \App\Models\ContactInfo::getAllGrouped();
