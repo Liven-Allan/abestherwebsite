@@ -13,12 +13,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Create a default user without using factories
+        if (!\App\Models\User::where('email', 'admin@school.com')->exists()) {
+            \App\Models\User::create([
+                'name' => 'School Admin',
+                'email' => 'admin@school.com',
+                'username' => 'admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('password123'),
+            ]);
+        }
 
         $this->call([
             CarouselSeeder::class,
