@@ -23,16 +23,10 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $this->call([
-            CarouselSeeder::class,
-            AboutSectionSeeder::class,
-            CorePillarSeeder::class,
-            FeeStructureSeeder::class,
-            StaffSeeder::class,
-            LatestNewsSeeder::class,
-            ContactInfoSeeder::class,
-            SiteSettingSeeder::class,
-            PhotoGallerySeeder::class,
-        ]);
+        // Note: Other seeders have been removed to prevent overwriting production data
+        // Run individual seeders manually if needed:
+        // php artisan db:seed --class=CarouselSeeder
+        // php artisan db:seed --class=AboutSectionSeeder
+        // etc.
     }
 }
