@@ -65,10 +65,13 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-white rounded p-4 text-center h-100 shadow">
                     <div class="mb-4">
-                        <img class="img-fluid" src="{{ asset('img/mtn.png') }}" alt="MTN Mobile Money" style="max-height: 100px;">
+                        @php
+                            $mtnImagePath = $mtnPayment->image_path ?? 'img/mtn.png';
+                        @endphp
+                        <img class="img-fluid" src="{{ asset($mtnImagePath) }}" alt="{{ $mtnPayment->title ?? 'MTN Mobile Money' }}" style="max-height: 100px;">
                     </div>
-                    <h4 class="mb-3">Deposit money on your mobile phone (free)</h4>
-                    <p class="mb-0">Dial *165#, Select Payments, Select School Fees, select School Pay, enter the Student Code, Verify the student details, enter the amount to pay, and confirm with your mobile money pin</p>
+                    <h4 class="mb-3">{{ $mtnPayment->title ?? 'MTN Mobile Money' }}</h4>
+                    <p class="mb-0">{{ $mtnPayment->description ?? 'Dial *165#, Select Payments, Select School Fees, select School Pay, enter the Student Code, Verify the student details, enter the amount to pay, and confirm with your mobile money pin' }}</p>
                 </div>
             </div>
             
@@ -76,10 +79,13 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="bg-white rounded p-4 text-center h-100 shadow">
                     <div class="mb-4">
-                        <img class="img-fluid" src="{{ asset('img/airtel.png') }}" alt="Airtel Money" style="max-height: 100px;">
+                        @php
+                            $airtelImagePath = $airtelPayment->image_path ?? 'img/airtel.png';
+                        @endphp
+                        <img class="img-fluid" src="{{ asset($airtelImagePath) }}" alt="{{ $airtelPayment->title ?? 'Airtel Money' }}" style="max-height: 100px;">
                     </div>
-                    <h4 class="mb-3">Deposit money on your mobile phone (free)</h4>
-                    <p class="mb-0">Dial *185#, Select Payments, Select School Fees, select School Pay, enter the Student Code, Verify the student details, enter the amount to pay, and confirm with your mobile money pin</p>
+                    <h4 class="mb-3">{{ $airtelPayment->title ?? 'Airtel Money' }}</h4>
+                    <p class="mb-0">{{ $airtelPayment->description ?? 'Dial *185#, Select Payments, Select School Fees, select School Pay, enter the Student Code, Verify the student details, enter the amount to pay, and confirm with your mobile money pin' }}</p>
                 </div>
             </div>
         </div>

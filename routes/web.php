@@ -48,7 +48,9 @@ Route::get('/about', function () {
 Route::get('/fees-structure', function () {
     $tuitionFees = \App\Models\FeeStructure::getTuitionFees();
     $uniformFees = \App\Models\FeeStructure::getUniformFees();
-    return view('fees_structure', compact('tuitionFees', 'uniformFees'));
+    $mtnPayment = \App\Models\FeeStructure::getMtnPayment();
+    $airtelPayment = \App\Models\FeeStructure::getAirtelPayment();
+    return view('fees_structure', compact('tuitionFees', 'uniformFees', 'mtnPayment', 'airtelPayment'));
 })->name('fees-structure');
 
 // Contact page

@@ -3,6 +3,21 @@
 @section('title', 'Site Settings')
 
 @section('content')
+<!-- Page Header Start -->
+<div class="container-fluid py-5 page-header position-relative mb-5"
+     style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url('{{ $headerBackgroundImage }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container py-5 text-center">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Site Settings</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Admin</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Site Settings</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
@@ -171,10 +186,38 @@
                             </div>
                         </div>
 
+                        <!-- Page Content Settings -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h6 class="text-muted mb-3">Page Content Settings</h6>
+                                
+                                <div class="mb-3">
+                                    <label for="admission_text" class="form-label">
+                                        <i class="fa fa-bullhorn me-2"></i>About Page Admission Text <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control @error('admission_text') is-invalid @enderror" 
+                                           id="admission_text" 
+                                           name="admission_text" 
+                                           value="{{ old('admission_text', $siteSetting->admission_text) }}" 
+                                           placeholder="e.g., Admissions for 2026 Intake In Progress">
+                                    @error('admission_text')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                    <small class="form-text text-muted">
+                                        This text appears as the subtitle on the About Us page header.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-12">
                                 <hr>
-                                <div class="d-flex justify-content-end">
+                                <div class="d-flex justify-content-between">
+                                    <a href="{{ route('admin') }}" class="btn btn-secondary">
+                                        <i class="fa fa-arrow-left me-2"></i>Back to Dashboard
+                                    </a>
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fas fa-save"></i> Update Settings
                                     </button>

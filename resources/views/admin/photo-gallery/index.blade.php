@@ -3,6 +3,21 @@
 @section('title', 'Manage Photo Gallery')
 
 @section('content')
+<!-- Page Header Start -->
+<div class="container-fluid py-5 page-header position-relative mb-5"
+     style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url('{{ $headerBackgroundImage }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container py-5 text-center">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Photo Gallery Management</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Admin</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Photo Gallery</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
@@ -83,6 +98,12 @@
                     @endif
                 </div>
             </div>
+        </div>
+        
+        <div class="mt-4">
+            <a href="{{ route('admin') }}" class="btn btn-secondary">
+                <i class="fa fa-arrow-left me-2"></i>Back to Dashboard
+            </a>
         </div>
     </div>
 </div>

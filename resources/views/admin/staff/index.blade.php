@@ -4,7 +4,8 @@
 
 @section('content')
 <!-- Page Header Start -->
-<div class="container-fluid py-5 page-header position-relative mb-5">
+<div class="container-fluid py-5 page-header position-relative mb-5"
+     style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url('{{ $headerBackgroundImage }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
     <div class="container py-5 text-center">
         <h1 class="display-2 text-white animated slideInDown mb-4">Staff Management</h1>
         <nav aria-label="breadcrumb animated slideInDown">

@@ -30,7 +30,8 @@ class SiteSettingController extends Controller
             'facebook_url' => 'nullable|url',
             'twitter_url' => 'nullable|url',
             'youtube_url' => 'nullable|url',
-            'linkedin_url' => 'nullable|url'
+            'linkedin_url' => 'nullable|url',
+            'admission_text' => 'required|string|max:255'
         ]);
 
         $siteSetting = SiteSetting::getInstance();

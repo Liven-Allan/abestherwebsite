@@ -14,7 +14,8 @@ class SiteSetting extends Model
         'facebook_url',
         'twitter_url',
         'youtube_url',
-        'linkedin_url'
+        'linkedin_url',
+        'admission_text'
     ];
 
     // Singleton pattern - ensure only one record exists
@@ -31,7 +32,8 @@ class SiteSetting extends Model
                 'facebook_url' => null,
                 'twitter_url' => null,
                 'youtube_url' => null,
-                'linkedin_url' => null
+                'linkedin_url' => null,
+                'admission_text' => 'Admissions for 2026 Intake In Progress'
             ]);
         }
         

@@ -25,6 +25,18 @@ class FeeStructure extends Model
         return self::where('type', 'uniform')->first();
     }
 
+    // Get MTN payment image
+    public static function getMtnPayment()
+    {
+        return self::where('type', 'mtn_payment')->first();
+    }
+
+    // Get Airtel payment image
+    public static function getAirtelPayment()
+    {
+        return self::where('type', 'airtel_payment')->first();
+    }
+
     // Ensure only one record per type
     public static function createOrUpdate($type, $data)
     {

@@ -28,5 +28,21 @@ class FeeStructureSeeder extends Seeder
             'image_path' => 'img/school_uniform_fees.png',
             'description' => 'School uniforms, books, and other miscellaneous fees'
         ]);
+
+        // MTN Payment Method
+        FeeStructure::create([
+            'type' => 'mtn_payment',
+            'title' => 'MTN Mobile Money',
+            'image_path' => 'img/mtn.png',
+            'description' => 'Dial *165#, Select Payments, Select School Fees, select School Pay, enter the Student Code, Verify the student details, enter the amount to pay, and confirm with your mobile money pin'
+        ]);
+
+        // Airtel Payment Method
+        FeeStructure::create([
+            'type' => 'airtel_payment',
+            'title' => 'Airtel Money',
+            'image_path' => 'img/airtel.png',
+            'description' => 'Dial *185#, Select Payments, Select School Fees, select School Pay, enter the Student Code, Verify the student details, enter the amount to pay, and confirm with your mobile money pin'
+        ]);
     }
 }

@@ -21,7 +21,8 @@ class SiteSettingSeeder extends Seeder
                 'facebook_url' => 'https://facebook.com/abesther-primary-school',
                 'twitter_url' => 'https://twitter.com/abesther_school',
                 'youtube_url' => 'https://youtube.com/@abesther-primary-school',
-                'linkedin_url' => 'https://linkedin.com/company/abesther-primary-school'
+                'linkedin_url' => 'https://linkedin.com/company/abesther-primary-school',
+                'admission_text' => 'Admissions for 2026 Intake In Progress'
             ]);
         }
     }

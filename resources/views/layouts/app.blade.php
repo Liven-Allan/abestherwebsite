@@ -34,75 +34,75 @@
     <!-- Custom Color Override -->
     <style>
         :root {
-            --bs-primary: #87CEEB !important; /* Sky Blue */
+            --bs-primary: #007bff !important; /* Blue */
         }
         
         .text-primary {
-            color: #87CEEB !important;
+            color: #007bff !important;
         }
         
         .btn-primary {
-            background-color: #87CEEB !important;
-            border-color: #87CEEB !important;
+            background-color: #007bff !important;
+            border-color: #007bff !important;
         }
         
         .btn-primary:hover {
-            background-color: #6BB6E0 !important;
-            border-color: #6BB6E0 !important;
+            background-color: #0056b3 !important;
+            border-color: #0056b3 !important;
         }
         
         .bg-primary {
-            background-color: #87CEEB !important;
+            background-color: #007bff !important;
         }
         
         .border-primary {
-            border-color: #87CEEB !important;
+            border-color: #007bff !important;
         }
         
         .spinner-border.text-primary {
-            color: #87CEEB !important;
+            color: #007bff !important;
         }
         
         /* Navbar brand color */
         .navbar-brand h1 {
-            color: #87CEEB !important;
+            color: #007bff !important;
         }
         
         /* Breadcrumb active color */
         .breadcrumb-item.active {
-            color: #87CEEB !important;
+            color: #007bff !important;
         }
         
         /* Link colors */
         a.text-primary {
-            color: #87CEEB !important;
+            color: #007bff !important;
         }
         
         /* Badge primary */
         .badge.bg-primary {
-            background-color: #87CEEB !important;
+            background-color: #007bff !important;
         }
         
         /* Additional overrides for completeness */
         .btn-outline-primary {
-            color: #87CEEB !important;
-            border-color: #87CEEB !important;
+            color: #007bff !important;
+            border-color: #007bff !important;
         }
         
         .btn-outline-primary:hover {
-            background-color: #87CEEB !important;
-            border-color: #87CEEB !important;
+            background-color: #007bff !important;
+            border-color: #007bff !important;
         }
         
         /* Form controls focus */
         .form-control:focus {
-            border-color: #87CEEB !important;
-            box-shadow: 0 0 0 0.2rem rgba(135, 206, 235, 0.25) !important;
+            border-color: #007bff !important;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
         }
         
         /* Active navigation items */
         .nav-link.active {
-            color: #87CEEB !important;
+            color: #007bff !important;
         }
     </style>
 

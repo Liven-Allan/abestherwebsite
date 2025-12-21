@@ -12,13 +12,15 @@ class FeeStructureController extends Controller
     {
         $tuitionFees = FeeStructure::getTuitionFees();
         $uniformFees = FeeStructure::getUniformFees();
+        $mtnPayment = FeeStructure::getMtnPayment();
+        $airtelPayment = FeeStructure::getAirtelPayment();
         
-        return view('admin.fee-structure.index', compact('tuitionFees', 'uniformFees'));
+        return view('admin.fee-structure.index', compact('tuitionFees', 'uniformFees', 'mtnPayment', 'airtelPayment'));
     }
 
     public function edit($type)
     {
-        if (!in_array($type, ['tuition', 'uniform'])) {
+        if (!in_array($type, ['tuition', 'uniform', 'mtn_payment', 'airtel_payment'])) {
             return redirect()->route('admin.fee-structure.index')
                 ->with('error', 'Invalid fee structure type.');
         }
@@ -37,6 +39,16 @@ class FeeStructureController extends Controller
                     'title' => 'Other Fees (Uniforms & More)',
                     'image_path' => 'img/school_uniform_fees.png',
                     'description' => 'School uniforms, books, and other miscellaneous fees'
+                ],
+                'mtn_payment' => [
+                    'title' => 'MTN Mobile Money',
+                    'image_path' => 'img/mtn.png',
+                    'description' => 'MTN mobile money payment instructions'
+                ],
+                'airtel_payment' => [
+                    'title' => 'Airtel Money',
+                    'image_path' => 'img/airtel.png',
+                    'description' => 'Airtel money payment instructions'
                 ]
             ];
             
@@ -48,7 +60,7 @@ class FeeStructureController extends Controller
 
     public function update(Request $request, $type)
     {
-        if (!in_array($type, ['tuition', 'uniform'])) {
+        if (!in_array($type, ['tuition', 'uniform', 'mtn_payment', 'airtel_payment'])) {
             return redirect()->route('admin.fee-structure.index')
                 ->with('error', 'Invalid fee structure type.');
         }
@@ -83,7 +95,7 @@ class FeeStructureController extends Controller
 
     public function destroy($type)
     {
-        if (!in_array($type, ['tuition', 'uniform'])) {
+        if (!in_array($type, ['tuition', 'uniform', 'mtn_payment', 'airtel_payment'])) {
             return redirect()->route('admin.fee-structure.index')
                 ->with('error', 'Invalid fee structure type.');
         }

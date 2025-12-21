@@ -9,7 +9,7 @@
      style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url('{{ $headerBackgroundImage }}'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
     <div class="container text-center py-5">
         <h1 class="display-4 text-primary animated slideInDown mb-3">About Us</h1>
-        <h2 class="display-2 text-white animated slideInDown">Admissions for 2026 Intake In Progress</h2>
+        <h2 class="display-2 text-white animated slideInDown">{{ $siteSettings->admission_text }}</h2>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Home</a></li>
