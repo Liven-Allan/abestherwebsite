@@ -42,7 +42,7 @@
                             <small class="text-muted mb-3 d-block">
                                 <i class="fa fa-calendar me-2"></i>{{ $news->formatted_date }}
                             </small>
-                            <p class="mb-0">{{ $news->excerpt }}</p>
+                            <p class="mb-0">{!! nl2br(e($news->content)) !!}</p>
                         </div>
                     </div>
                 </div>

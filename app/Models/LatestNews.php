@@ -41,6 +41,6 @@ class LatestNews extends Model
     // Get excerpt from content
     public function getExcerptAttribute()
     {
-        return substr(strip_tags($this->content), 0, 150) . '...';
+        return substr(strip_tags($this->content), 0, 300) . '...';
     }
 }
